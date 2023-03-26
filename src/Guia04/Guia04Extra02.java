@@ -17,18 +17,34 @@ elementos).
 		int [] vectorB = new int [n];
 		
 		
-		for (int i=0; i<n;i++) {
-			vectorA [i] = (int) (Math.random()*5);
-			vectorB [i] = (int) (Math.random()*5);
-			System.out.print("[" + vectorA[i] + "] ");
-			System.out.print("[" + vectorB[i] + "] ");
+		llenarVector(vectorA, n);
+		llenarVector(vectorB, n);
 
-		}
-		sonIguales( vectorA, vectorB, n);
+		System.out.println("");
+		System.out.println("vector A");
+		mostrarVector(vectorA);
+		
+		System.out.println("");
+		System.out.println("vector B");
+		mostrarVector(vectorB);
+
+		System.out.println("");
+
+		sonIguales(vectorA, vectorB, n);
 		leer.close();
 		
+	}	
+	
+	public static void llenarVector(int[] vector, int dimension) {
+		for (int i=0; i<dimension;i++) {
+			vector [i] = (int) (Math.random()*5);
+		}
 	}
-
+	public static void mostrarVector(int[] vector) {
+		for (int muestra: vector) {
+			System.out.print("[" + muestra + "] ");
+		}
+	}
 	public static boolean sonIguales(int[] vectorA, int[] vectorB, int n) {
 		for (int i =0; i < n; i++) {
 			if (vectorA[i] != vectorB[i]) {

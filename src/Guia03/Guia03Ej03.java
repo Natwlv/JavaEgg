@@ -15,18 +15,27 @@ El cambio de divisas es:
 * 129.852 yenes es un 1 €
 	 */
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		Scanner leer = new Scanner(System.in);
-		System.out.println("Ingrese cantidad de euros a convertir:");
+		System.out.println("Ingrese cantidad de euros:");
 		int euros = leer.nextInt();
-		convertirMoneda(euros);
+		System.out.println("elija la moneda a convertir: \n 1. Libras \n 2. Dólares \n 3. yenes");
+		int opc = leer.nextInt();		
+	
+		convertirMoneda(euros, opc);
 		leer.close();
 	}
 
-	public static void convertirMoneda(int euros) {
-		System.out.println(euros + " euros = "+ (euros*0.86)+ " libras");
-		System.out.println(euros + " euros = "+ (euros*1.28611)+ " dólares");
-		System.out.println(euros + " euros = "+ (euros*129.852)+ " yenes");
+	public static void convertirMoneda(int euros, int opc) {
+		if (opc ==1) {
+			System.out.println(euros + " euros = "+ (float)(euros*0.86)+ " libras");
+		}
+		if (opc ==2) {
+			System.out.println(euros + " euros = "+ (float)(euros*1.28611)+ " dólares");
+		}
+		if (opc ==3) {
+			System.out.println(euros + " euros = "+ (float)(euros*129.852)+ " yenes");
+		}
 
 	}
 		

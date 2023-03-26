@@ -11,34 +11,51 @@ cambiando sus filas por columnas (o viceversa).
 
 	public static void main(String[] args) {
 		Scanner leer = new Scanner (System.in);
+		//declaro e inicializo las matrices
+		int matrizA [][] = new int [4][4];
+		int matrizB [][] = new int [4][4];		
 		
-		int matriz1 [][] = new int [4][4];
-		int matriz2 [][] = new int [4][4];
+		llenarMatriz(matrizA);
+		mostrarMatriz(matrizA);
+		matrizTraspuesta(matrizA, matrizB);
+		mostrarTraspuesta(matrizA); 
 		
-		
+		leer.close();
+
+	}
+	
+	public static void llenarMatriz(int[][] matriz) {
 		for (int i = 0; i <= 3; i++) {
 			for (int j = 0; j <= 3; j++) {
-				matriz1[i][j] = (int) (Math.random() * 10);
+				matriz[i][j] = (int) (Math.random() * 10);
 			}
 		}
+		
+	}
+	public static void mostrarMatriz(int [][] matriz) {
 		System.out.println("");
-		System.out.println("MATRIZ:");
+		System.out.println("MATRIZ A:");
 		System.out.println("====================");
 		System.out.println("");
 
-
-		for (int i = 0; i <= 3; i++) {
-			for (int j = 0; j <= 3; j++) {
-				System.out.print("[" + matriz1[i][j] + "] ");
+		
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				System.out.print("[" + matriz[i][j] + "] ");
 			}
 			System.out.println("");
 		}
 		
-		for (int i = 0; i <= 3; i++) {
-			for (int j = 0; j <= 3; j++) {
-				matriz2[j][i] = matriz1[i][j];
+	}
+	public static void matrizTraspuesta(int [][] matriz, int [][] matriz2) {
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				matriz2[j][i] = matriz[i][j];
 			}
 		}
+		
+	}
+	public static void mostrarTraspuesta(int [][] matriz) {
 		System.out.println("");
 		System.out.println("MATRIZ TRASPUESTA:");
 		System.out.println("====================");
@@ -46,16 +63,13 @@ cambiando sus filas por columnas (o viceversa).
 
 
 
-		for (int i = 0; i <= 3; i++) {
-			for (int j = 0; j <= 3; j++) {
-				System.out.print("[" + matriz1[j][i] + "] ");
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				System.out.print("[" + matriz[j][i] + "] ");
 			}
 			System.out.println("");
 		}
 		
-
-		leer.close();
-
 	}
 
 }
