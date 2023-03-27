@@ -11,24 +11,31 @@ N, con los valores ingresados por el usuario
 		
 		System.out.println("Ingrese tamaño del vector");
 		int dimension = leer.nextInt();
-		int [] vector = new int [dimension];
-		int suma =0;
+		int [] vector = new int [dimension];  		
 		
+		llenarVector(vector, dimension, leer);
+		mostrarVector(vector);		
+		
+		leer.close();	
+	}
+	
+	public static void llenarVector(int[] vector, int dimension,  Scanner leer) {
+		int suma =0;
 		for (int i=0; i<dimension; i++) {
 			System.out.println("Ingrese valores para el vector en el subíndice " +i);
 			vector[i] = leer.nextInt();
 			suma+=vector[i];
-		}
-		
-		for (int i=0; i<dimension; i++) {
-			System.out.print("["+vector[i]+"] ");
-		}
-		System.out.println("");
-		
+		}		
 		System.out.println("La suma de todos las valores del vector es " +suma);
 		
-		leer.close();
-
+		
 	}
-
+	public static void mostrarVector(int[] vector) {
+		for (int recorrido : vector) {
+			System.out.print("["+recorrido+"] ");
+		}
+		
+		System.out.println("");
+	}
+	
 }

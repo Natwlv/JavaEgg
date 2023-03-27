@@ -8,7 +8,7 @@ parámetro. Después haremos otra función o procedimiento que imprima el vector
 
 	public static void main(String[] args) {
 		Scanner leer = new Scanner(System.in);
-		System.out.println("Ingrese dimensión del vector");
+		System.out.println("Ingrese dimensión del vector"); 
 		int n = leer.nextInt();
 		int[] vector = new int [n];
 		llenarVector(vector,n);

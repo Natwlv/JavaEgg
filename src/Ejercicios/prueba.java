@@ -1,9 +1,6 @@
 package Ejercicios;
 
-
 import java.util.Scanner;
-
-import java.util.Date;
 
 public class prueba {
 
@@ -17,7 +14,7 @@ iniciales y los valores finales de cada variable. Utilizar sólo una variable au
 	public static void main(String[] args) {
 		Scanner leer = new Scanner(System.in);
         int num =0;
-        System.out.println("Ingrese un numero");
+        System.out.println("Ingrese un numero"); 
 
         for (int i = 0; i <4; i++) {
         	System.out.println("");
@@ -32,6 +29,7 @@ iniciales y los valores finales de cada variable. Utilizar sólo una variable au
             }
             System.out.print("*");
         }
+        leer.close();
         }
     }
 

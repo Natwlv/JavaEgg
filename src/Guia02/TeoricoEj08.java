@@ -1,4 +1,4 @@
-package Ejercicios;
+package Guia02;
 
 import java.util.Scanner;
 

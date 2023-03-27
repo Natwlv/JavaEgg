@@ -1,4 +1,4 @@
-package Ejercicios;
+package Guia03;
 
 import java.util.Scanner;
 
@@ -25,6 +25,7 @@ La salida del programa debería ser: @y#r, l*n#s, s@l$m%s @ l@s %nc# y 10.
 		String frase = leer.nextLine(), fraseTransformada = "";
 		
 		int longitud = frase.length();
+		
 
 		for (int i = 0; i <=longitud-1; i++) {
             fraseTransformada = fraseTransformada + vocal(frase.charAt(i));

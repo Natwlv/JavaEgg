@@ -12,26 +12,28 @@ muestre por pantalla en orden descendente.
 		Scanner leer = new Scanner(System.in);
 		int[] vector = new int [100];
 		
+		llenarVector(vector);
+		vectorDescendente(vector);	
 		
-		
-		for (int i = 0; i <= 99; i++) {
-			vector[i]=i;
-
+		leer.close();
+	}
+	
+	public static void llenarVector(int [] vector) {
+		for (int i = 0; i < 100; i++) {
+			vector[i]=i+1;
 		}
+		System.out.println("");
+	}
+	
+	public static void vectorDescendente(int [] vector) {
 		System.out.println("");
 		System.out.println("MUESTRA VECTOR DESCENDENTE");
 		System.out.println("=============================");
 		System.out.println("");
-
 		
 		for (int i=99; i>=0; i--) {
-			System.out.print("[" + (vector[i]+1) + "] ");
-			
-		}
-		
-		
-		
-		leer.close();
+			System.out.print("[" + (vector[i]) + "] ");			
+		}		
 	}
 
 }

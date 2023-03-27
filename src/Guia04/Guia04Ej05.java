@@ -16,68 +16,104 @@ denota por AT y se obtiene cambiando sus filas por columnas (o viceversa).
 		
 		System.out.println("Ingrese dimensión de matriz");
 		int dimension = leer.nextInt();
-		int [][] matriz1 = new int[dimension][dimension];
-		int [][] matriz2 = new int[dimension][dimension];
-
-		for (int i = 0; i<=(matriz1.length-1);i++) {
-			for (int j=0; j<=(matriz1.length-1);j++) {
-				matriz1[i][j] = (int) (Math.random() *(10-(-10)+1)+(-10));
-			}
-		}
-		System.out.println("");
-		System.out.println("MATRIZ 1:");
-		System.out.println("====================");
-		System.out.println("");
-
+		int [][] matrizA = new int[dimension][dimension];
+		int [][] matrizB = new int[dimension][dimension]; 
 		
-		for (int i = 0; i<=(matriz1.length-1);i++) {
-			for (int j=0; j<=(matriz1.length-1);j++) {
-				System.out.print("[" + matriz1[i][j] + "] ");
-			}
-			System.out.println("");
-
-		}
-		for (int i = 0; i<=(matriz2.length-1);i++) {
-			for (int j=0; j<=(matriz2.length-1);j++) {
-				matriz2[j][i] = -(matriz1[i][j]);
-			}
-		}
-		System.out.println("");
-		System.out.println("MATRIZ 1:");
-		System.out.println("====================");
-		System.out.println("");
 		
-		for (int i = 0; i<=(matriz2.length-1);i++) {
-			for (int j=0; j<=(matriz2.length-1);j++) {
-				System.out.print("[" + matriz2[i][j] + "] ");
-			}
-			System.out.println("");
-
-		}
-		 boolean antiSimetrica = false;
-	        for (int i = 0; i < matriz2.length; i++) {
-	            for (int j = 0; j < matriz2.length; j++) {
-	                if (matriz1[i][j] == -(matriz2[j][i])) {
-	                    antiSimetrica = true;
-	                } else {
-	                    antiSimetrica = false;
-	                    System.out.println();
-	                    System.out.println("La matriz no es antisimétrica");
-	                    break;
-	                }
-	            }
-	            if (!antiSimetrica) {
-	                break;
-	            }
-	        }
-	        if (antiSimetrica) {
-	            System.out.println();
-	            System.out.println("La matriz es antisimétrica");
-	        }
+		llenarMatriz(matrizA);
+		System.out.println("");
+		System.out.println("MATRIZ: A");
+		System.out.println("====================");
+		mostrarMatriz(matrizA);
+		convertirMatriz(matrizB, matrizA);
+		System.out.println("");
+		System.out.println("MATRIZ AT:");
+		System.out.println("====================");
+		mostrarMatriz(matrizB);
+		boolean resultado = matrizAsi(matrizB, matrizA);
+        System.out.println("La matriz es antisimétrica: " + resultado);
 
 		leer.close();
 	}
 	
-
+	
+	public static void llenarMatriz(int [][] matrizA) {
+				for (int i = 0; i<(matrizA.length);i++) {
+					for (int j=0; j<(matrizA.length);j++) {
+						matrizA[i][j] = (int) (Math.random() *(10-(-10)+1)+(-10));
+					}
+				}
+		
+		
 	}
+	public static void mostrarMatriz(int [][] matrizA) {
+		
+		System.out.println("");
+
+		//muestro matriz A
+		for (int i = 0; i<(matrizA.length);i++) {
+			for (int j=0; j<(matrizA.length);j++) {
+				System.out.print("[" + matrizA[i][j] + "] ");
+			}
+			System.out.println("");
+
+		}
+		
+		
+	}
+	public static void convertirMatriz(int [][] matrizB, int [][] matrizA) {
+		//convierto la matriz A en matriz AT (traspuesta y asimétrica)
+				for (int i = 0; i<(matrizB.length);i++) {
+					for (int j=0; j<(matrizB.length);j++) {
+						matrizB[j][i] = -(matrizA[i][j]);
+					}
+				}
+	
+	
+	}
+	
+	/*
+	public static void comprobarMatriz(int [][] matrizB, int [][] matrizA) {
+		boolean antiSimetrica = false;
+        for (int i = 0; i < matrizB.length; i++) {
+            for (int j = 0; j < matrizB.length; j++) {
+                if (matrizA[i][j] == -(matrizB[j][i])) {
+                    antiSimetrica = true;
+                } else {
+                    antiSimetrica = false;
+                    System.out.println();
+                    System.out.println("La matriz no es antisimétrica");
+                    break;
+                }
+            }
+            if (!antiSimetrica) {
+                break;
+            }
+        }
+        if (antiSimetrica) {
+            System.out.println();
+            System.out.println("La matriz es antisimétrica");
+        }
+	
+	}
+	*/
+	public static boolean matrizAsi(int [][] matrizB, int [][] matrizA) {
+		boolean antiSimetrica = false;
+		for (int i = 0; i < matrizB.length; i++) {
+            for (int j = 0; j < matrizB.length; j++) {
+                if (matrizA[i][j] == -(matrizB[j][i])) {
+                    antiSimetrica = true;
+                } else {
+                    antiSimetrica = false;
+                  break;
+                }
+            }
+            if (!antiSimetrica) {
+                break;
+            }
+        }
+        
+		return antiSimetrica;
+	}
+}
 
