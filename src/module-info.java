@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author dostintas
- *
- */
-module EjerciciosPrácticosEgg {
-}
