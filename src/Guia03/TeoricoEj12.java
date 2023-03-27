@@ -1,13 +1,12 @@
-package Ejercicios;
+package Guia03;
 
 import java.util.Scanner;
 
 public class TeoricoEj12 {
 	/*
-	 * EJERCICIO 12
-Crea un procedimiento EsMultiplo que reciba los dos números pasados por el usuario, validando
-que el primer numero múltiplo del segundo y e imprima si el primer numero es múltiplo del
-segundo, sino informe que no lo son.
+	Crea un procedimiento EsMultiplo que reciba los dos números pasados por el usuario, validando
+	que el primer numero múltiplo del segundo y e imprima si el primer numero es múltiplo del
+	segundo, sino informe que no lo son.
 	 */
 
 	public static void main(String[] args) {
@@ -24,9 +23,9 @@ segundo, sino informe que no lo son.
 	
 	
 	
-	public static void EsMultiplo (int num, int num2) {
+	public static void EsMultiplo (int num, int num2) { 
 		if (num % num2 == 0) {
-			System.out.println("El primer numero es múltiplo del segundo");
+			System.out.println("El "+ num + " es múltiplo de " + num2);
 		} else {
 			System.out.println("El primer numero NO es múltiplo del segundo");
 		}

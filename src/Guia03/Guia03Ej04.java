@@ -14,8 +14,7 @@ primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
 		System.out.println("Ingrese un número para saber si es primo");
 		int num = leer.nextInt();
 		System.out.println("El número ingresado es " + primo(num));
-		primo(num);
-		leer.close();
+		leer.close(); 
 	}
 	
 	public static boolean primo (int num) {

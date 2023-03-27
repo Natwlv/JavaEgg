@@ -15,37 +15,56 @@ numero y si se encuentra repetido
 		System.out.println("Ingrese tamaño de vector");
 		int dimension = leer.nextInt();
 		
-		int[] vector = new int [dimension];
+		int[] vector = new int [dimension];	
 		
-		
-		
-		for (int i = 0; i <= dimension-1; i++) {
-			vector[i]= (int) (Math.random() * 10) ;
-
-		}
-		System.out.println("");
-		System.out.println("Ingrese número a buscar en el vector");
-		int numBuscado = leer.nextInt();
-		int contador = 0;
-		
-		for (int i = 0; i <= dimension-1; i++) {
-			if (numBuscado == vector[i]) {
-				contador++;
-				System.out.println("El número " + numBuscado + " se encontró en el subíndice " + i);
-			
-
-			}
-			
-		}
-		System.out.println("=======================================");
-
-		System.out.println("El número " + numBuscado + " se encontró " + contador + " veces");
-		
-		System.out.println("=======================================");
-
-		
+		llenarVector(vector, dimension);
+		mostrarVector(vector);
+		buscarNum(vector, dimension, leer);
 		
 		leer.close();
+	}
+	
+	public static void llenarVector(int [] vector, int dimension) {
+		//asigno valores random al vector
+				for (int i = 0; i < dimension; i++) {
+					vector[i]= (int) (Math.random() * 10) ;
+
+				}		
+	}
+	public static void mostrarVector(int [] vector) {
+		//muestro el vector
+				for (int elemento : vector) {
+					System.out.print("[" + elemento + "] ");
+				}
+		
+	}
+	public static void buscarNum(int [] vector, int dimension, Scanner leer) {
+
+		//determino el num a buscar
+				System.out.println("");
+				System.out.println("Ingrese número a buscar en el vector");
+				int numBuscado = leer.nextInt();
+				int contador = 0;
+				
+				//busco el num en el vector
+				for (int i = 0; i < dimension; i++) {
+					if (numBuscado == vector[i]) {
+						contador++;
+						System.out.println("El número " + numBuscado + " se encontró en el subíndice " + i);
+					
+
+					}
+					
+				}
+				System.out.println("=======================================");
+
+				System.out.println("El número " + numBuscado + " se encontró " + contador + " veces");
+				
+				System.out.println("=======================================");
+
+				
+				
+		
 	}
 
 }

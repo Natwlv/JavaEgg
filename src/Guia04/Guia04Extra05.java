@@ -14,21 +14,24 @@ muestre la suma de sus elementos.
 		System.out.println("Ingrese cantidad de columnas de la matriz");
 		int m = leer.nextInt();
 		int [][] matriz = new int [n][m];
-		int suma=0;
 		
+		sumarValores(matriz, n, m);		
+		
+		leer.close();
+	}
+	
+	public static void sumarValores(int[][] matriz, int n, int m) {
+		int suma=0;
+
 		for (int i = 0; i < n; i++) {
 			for (int j=0; j<m;j++) {
 				matriz[i][j] = (int) (Math.random()*5);
-				System.out.print("[" + matriz[i][j]+ "] ");
+				System.out.print("[" + matriz[i][j]+ "] "); 
 				suma+= matriz[i][j];
 			}
 			System.out.println("");
 		}
 		
 		System.out.println("La suma de los valores de la matriz es " +suma);
-		
-		leer.close();
-
 	}
-
 }

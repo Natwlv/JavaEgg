@@ -13,23 +13,35 @@ de 2 dígitos, etcétera (hasta 5 dígitos).
 		System.out.println("Ingrese una dimensión del vector");
 		int dimension = leer.nextInt();
 		int[] vector = new int [dimension];
+		
+		llenarVector(vector, dimension);
+		mostrarVector(vector);
+		contarDigitos(vector, dimension); 
+
+		leer.close();
+	}
+	
+	public static void llenarVector(int [] vector, int dimension) {
+		for (int i = 0; i < dimension;i++){
+			vector[i]= (int) (Math.random() * 100000) ;
+		}
+		
+	}
+	public static void mostrarVector(int [] vector) {
+		for (int elemento : vector) {
+			System.out.println("[" + elemento + "] ");
+		}
+		
+	}
+	public static void contarDigitos(int [] vector, int dimension) {
 		int digito1 = 0;
 		int digito2 = 0;
 		int digito3 = 0;
 		int digito4 = 0;
 		int digito5 = 0;
-
-		for (int i = 0; i <= (dimension-1);i++){
-			vector[i]= (int) (Math.random() * 100000) ;
-		}
 		
-		for (int i = 0; i <= (dimension-1);i++){
-			System.out.print("[" + vector[i] + "] ");
-		}
 		
-		System.out.print("\n\n");
-
-		for (int i = 0; i <= (dimension-1);i++){
+		for (int i = 0; i < (dimension);i++){
 			if (vector[i] >0 && vector[i] <10) {
 				digito1++;
 			} else if  (vector[i] >10 && vector[i] <100) {
@@ -49,9 +61,7 @@ de 2 dígitos, etcétera (hasta 5 dígitos).
 		System.out.println("Hay " + digito3 + " números de 3 dígitos");
 		System.out.println("Hay " + digito4 + " números de 4 dígitos");
 		System.out.println("Hay " + digito5 + " números de 5 dígitos");
-
-
-		leer.close();
+		
 	}
 
 }
